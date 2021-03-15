@@ -172,6 +172,8 @@ class Deck:
                 temp_list.append(card)
                 temp_hand = Hand(temp_list)
                 hands_list.append(temp_hand)
+            # empty the deck
+            self.cards = []
             return hands_list
 
         else:
@@ -194,6 +196,8 @@ class Deck:
                     hands_for_less_cards = less_cards_list[i:i+card_per_hand]
                     temp_less_card_hand = Hand(hands_for_less_cards)
                     hands_list.append(temp_less_card_hand)
+                # empty the deck
+                self.cards = []
                 return hands_list
 
             else:
@@ -209,6 +213,7 @@ class Deck:
                         hands_for_more_cards = original_list[i:i + num_cards_per_hand]
                         temp_more_card_hand = Hand(hands_for_more_cards)
                         hands_list.append(temp_more_card_hand)
+                    self.cards = original_list[threshold_for_card:]
                     return hands_list
 
                 else:
@@ -231,6 +236,8 @@ class Deck:
                         hands_for_less_cards = less_cards_list[i:i + card_per_hand]
                         temp_less_card_hand = Hand(hands_for_less_cards)
                         hands_list.append(temp_less_card_hand)
+                    # empty the deck
+                    self.cards = []
                     return hands_list
 
 
